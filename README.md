@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my skills as a Data Analyst an
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://kshitij-gulati.github.io/portfolio) *(Update this link once deployed)*
+[View Live Portfolio](https://kshitij-gulati.github.io/Portfolio_Kshitij) *(Update this link once deployed)*
 
 ## 📸 Preview
 
