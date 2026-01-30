@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,13 +17,36 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    // You can integrate with a form service like Formspree, Netlify Forms, etc.
-    alert('Thank you for your message! I\'ll get back to you soon.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    
+    // Create form data for submission
+    const formDataToSend = new FormData()
+    formDataToSend.append('name', formData.name)
+    formDataToSend.append('email', formData.email)
+    formDataToSend.append('subject', formData.subject)
+    formDataToSend.append('message', formData.message)
+    formDataToSend.append('form-name', 'contact')
+    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend).toString()
+      })
+      
+      if (response.ok) {
+        alert('Thank you for your message! I\'ll get back to you soon.')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        // Fallback to email if form submission fails
+        window.location.href = `mailto:kshitijgulati7@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      // Fallback to email if there's an error
+      window.location.href = `mailto:kshitijgulati7@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`
+    }
   }
 
   const contactInfo = [
@@ -100,7 +123,15 @@ const Contact = () => {
               <h3 className="text-2xl font-display font-bold text-neutral-900 mb-6">
                 Send me a message
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true" 
+                onSubmit={handleSubmit} 
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
@@ -173,6 +204,22 @@ const Contact = () => {
                   <span>Send Message</span>
                 </motion.button>
               </form>
+              
+              {/* Backup Email Button */}
+              <div className="mt-6 pt-6 border-t border-neutral-200 text-center">
+                <p className="text-sm text-neutral-500 mb-4">
+                  Having trouble with the form? Send me an email directly:
+                </p>
+                <motion.a
+                  href="mailto:kshitijgulati7@gmail.com?subject=Portfolio Contact&body=Hi Kshitij,%0D%0A%0D%0A"
+                  className="inline-flex items-center space-x-2 px-6 py-3 bg-neutral-100 text-neutral-700 rounded-xl font-medium hover:bg-neutral-200 transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>kshitijgulati7@gmail.com</span>
+                </motion.a>
+              </div>
             </div>
           </motion.div>
 
