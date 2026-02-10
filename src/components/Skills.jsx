@@ -50,8 +50,11 @@ const Skills = () => {
   ]
 
   return (
-    <section id="skills" className="section-padding bg-gradient-to-b from-neutral-50/50 to-white">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="section-padding bg-gradient-to-b from-[#fafbff] via-white to-[#f5f8ff] dark:from-[#0f0f0f] dark:via-[#1a1a1a] dark:to-[#0a0a0a] relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary-400/15 to-primary-200/5 rounded-full blur-3xl dark:from-primary-600/10 dark:to-primary-400/5"></div>
+      <div className="absolute bottom-1/2 left-0 w-80 h-80 bg-gradient-to-br from-accent-400/10 to-accent-200/5 rounded-full blur-3xl dark:from-accent-600/5 dark:to-accent-400/5"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -68,7 +71,7 @@ const Skills = () => {
             What I work with
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-display font-bold text-neutral-900 mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-neutral-900 dark:text-white mb-6"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
@@ -77,7 +80,7 @@ const Skills = () => {
             Skills & Technologies
           </motion.h2>
           <motion.p 
-            className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -98,7 +101,7 @@ const Skills = () => {
               viewport={{ once: true }}
               whileHover={{ y: -5, scale: 1.02 }}
             >
-              <h3 className="text-2xl font-display font-bold text-neutral-900 mb-8 group-hover:text-primary-600 transition-colors duration-300">
+              <h3 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-8 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                 {category.title}
               </h3>
               <div className="space-y-6">
@@ -111,11 +114,11 @@ const Skills = () => {
                     viewport={{ once: true }}
                   >
                     <div className="flex justify-between items-center mb-3">
-                      <span className="text-neutral-700 font-medium text-lg">
+                      <span className="text-neutral-700 dark:text-neutral-300 font-medium text-lg">
                         {skill.name}
                       </span>
                       <motion.span 
-                        className="text-neutral-500 text-sm font-medium px-3 py-1 bg-neutral-100 rounded-full"
+                        className="text-neutral-500 dark:text-neutral-400 text-sm font-medium px-3 py-1 bg-neutral-100 dark:bg-neutral-800 rounded-full"
                         whileHover={{ scale: 1.1 }}
                       >
                         {skill.level}%
@@ -153,13 +156,13 @@ const Skills = () => {
             <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-br from-accent-200 to-primary-200 rounded-full translate-y-16 translate-x-16 opacity-30"></div>
             
             <motion.h3 
-              className="text-2xl font-bold text-neutral-900 mb-6 relative z-10"
+              className="text-2xl font-bold text-neutral-900 dark:text-white mb-6 relative z-10"
               whileHover={{ scale: 1.05 }}
             >
               Always Learning
             </motion.h3>
             <motion.p 
-              className="text-neutral-600 mb-8 text-lg leading-relaxed relative z-10"
+              className="text-neutral-600 dark:text-neutral-400 mb-8 text-lg leading-relaxed relative z-10"
               whileInView={{ opacity: 1 }}
               initial={{ opacity: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -171,7 +174,7 @@ const Skills = () => {
               {['TensorFlow', 'AWS', 'Docker', 'R', 'Apache Spark', 'FastAPI'].map((tech, index) => (
                 <motion.span
                   key={index}
-                  className="px-6 py-3 bg-gradient-to-r from-primary-100 to-accent-100 text-primary-700 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 cursor-default"
+                  className="px-6 py-3 bg-gradient-to-r from-primary-100 to-accent-100 dark:from-primary-900/30 dark:to-accent-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium hover:shadow-lg transition-all duration-300 cursor-default"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   initial={{ opacity: 0, y: 20 }}

@@ -34,8 +34,11 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="section-padding bg-gradient-to-b from-white to-neutral-50/50">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="section-padding bg-gradient-to-b from-white via-[#fafbff] to-[#f5f8ff] dark:from-[#1a1a1a] dark:via-[#0f0f0f] dark:to-[#0a0a0a] relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary-400/15 to-primary-200/5 rounded-full blur-3xl dark:from-primary-600/10 dark:to-primary-400/5"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-accent-400/10 to-accent-200/5 rounded-full blur-3xl dark:from-accent-600/5 dark:to-accent-400/5"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -52,7 +55,7 @@ const About = () => {
             Get to know me
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-display font-bold text-neutral-900 mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-neutral-900 dark:text-white mb-6"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
@@ -61,7 +64,7 @@ const About = () => {
             About Me
           </motion.h2>
           <motion.p 
-            className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -79,10 +82,10 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-neutral-900 mb-8">
+            <h3 className="text-3xl font-bold text-neutral-900 dark:text-white mb-8">
               My Journey
             </h3>
-            <div className="space-y-6 text-neutral-600 leading-relaxed">
+            <div className="space-y-6 text-neutral-600 dark:text-neutral-400 leading-relaxed">
               <motion.p
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: -20 }}
@@ -125,7 +128,7 @@ const About = () => {
           >
             <div className="glass-card rounded-3xl p-8 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-200 to-accent-200 rounded-full -translate-y-16 translate-x-16 opacity-50"></div>
-              <h3 className="text-2xl font-bold text-neutral-900 mb-8 relative z-10">
+              <h3 className="text-2xl font-bold text-neutral-900 dark:text-white mb-8 relative z-10">
                 Quick Facts
               </h3>
               <div className="space-y-6 relative z-10">
@@ -140,14 +143,14 @@ const About = () => {
                     whileHover={{ x: 5 }}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="p-2 bg-gradient-to-br from-primary-100 to-accent-100 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                        <div className="text-primary-600">
+                      <div className="p-2 bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/30 dark:to-accent-900/30 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                        <div className="text-primary-600 dark:text-primary-400">
                           {stat.icon}
                         </div>
                       </div>
-                      <span className="text-neutral-600 font-medium">{stat.label}</span>
+                      <span className="text-neutral-600 dark:text-neutral-400 font-medium">{stat.label}</span>
                     </div>
-                    <span className="font-bold text-neutral-900 text-lg">{stat.value}</span>
+                    <span className="font-bold text-neutral-900 dark:text-white text-lg">{stat.value}</span>
                   </motion.div>
                 ))}
               </div>
@@ -167,15 +170,15 @@ const About = () => {
               whileHover={{ y: -10, scale: 1.02 }}
             >
               <motion.div 
-                className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 text-primary-600 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300"
+                className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-100 to-accent-100 dark:from-primary-900/30 dark:to-accent-900/30 text-primary-600 dark:text-primary-400 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300"
                 whileHover={{ rotate: 5 }}
               >
                 {item.icon}
               </motion.div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-4">
+              <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">
                 {item.title}
               </h3>
-              <p className="text-neutral-600 leading-relaxed">
+              <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 {item.description}
               </p>
             </motion.div>

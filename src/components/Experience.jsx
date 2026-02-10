@@ -69,8 +69,11 @@ const Experience = () => {
   ]
 
   return (
-    <section id="experience" className="section-padding bg-gradient-to-b from-neutral-50 to-secondary-50/80">
-      <div className="max-w-7xl mx-auto">
+    <section id="experience" className="section-padding bg-gradient-to-b from-[#fafbff] via-white to-[#f5f8ff] dark:from-[#0f0f0f] dark:via-[#1a1a1a] dark:to-[#0a0a0a] relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-1/4 -left-80 w-96 h-96 bg-gradient-to-br from-primary-400/15 to-primary-200/5 rounded-full blur-3xl dark:from-primary-600/10 dark:to-primary-400/5"></div>
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gradient-to-br from-secondary-400/10 to-secondary-200/5 rounded-full blur-3xl dark:from-secondary-600/5 dark:to-secondary-400/5"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -86,17 +89,17 @@ const Experience = () => {
           >
             My journey
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-neutral-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-neutral-900 dark:text-white mb-4">
             Education & Experience
           </h2>
-          <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
             My academic background and continuous learning path in data analysis and software development
           </p>
         </motion.div>
 
         {/* Education */}
         <div className="mb-16">
-          <h3 className="text-2xl font-display font-bold text-neutral-900 mb-8 text-center">
+          <h3 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-8 text-center">
             Education
           </h3>
           {education.map((edu, index) => (
@@ -110,17 +113,17 @@ const Experience = () => {
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                 <div>
-                  <h4 className="text-xl font-display font-bold text-neutral-900 mb-1">
+                  <h4 className="text-xl font-display font-bold text-neutral-900 dark:text-white mb-1">
                     {edu.degree}
                   </h4>
                   <p className="text-lg text-primary-600 font-semibold mb-2">
                     {edu.school}
                   </p>
-                  <p className="text-neutral-600 font-medium mb-2">
+                  <p className="text-neutral-600 dark:text-neutral-400 font-medium mb-2">
                     {edu.grade}
                   </p>
                 </div>
-                <div className="flex flex-col md:items-end text-neutral-500 text-sm">
+                <div className="flex flex-col md:items-end text-neutral-500 dark:text-neutral-400 text-sm">
                   <div className="flex items-center space-x-1 mb-1">
                     <Calendar size={14} />
                     <span>{edu.period}</span>
@@ -132,17 +135,17 @@ const Experience = () => {
                 </div>
               </div>
               
-              <p className="text-neutral-600 mb-4 leading-relaxed">
+              <p className="text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
                 {edu.description}
               </p>
               
               <div className="mb-4">
-                <h5 className="font-semibold text-neutral-900 mb-2">
+                <h5 className="font-semibold text-neutral-900 dark:text-white mb-2">
                   Key Achievements
                 </h5>
                 <ul className="space-y-1">
                   {edu.achievements.map((achievement, achIndex) => (
-                    <li key={achIndex} className="text-neutral-600 text-sm flex items-start">
+                    <li key={achIndex} className="text-neutral-600 dark:text-neutral-400 text-sm flex items-start">
                       <span className="text-primary-500 mr-2">•</span>
                       {achievement}
                     </li>
@@ -151,14 +154,14 @@ const Experience = () => {
               </div>
               
               <div>
-                <h5 className="font-semibold text-neutral-900 mb-2">
+                <h5 className="font-semibold text-neutral-900 dark:text-white mb-2">
                   Relevant Coursework
                 </h5>
                 <div className="flex flex-wrap gap-2">
                   {edu.coursework.map((course, courseIndex) => (
                     <span
                       key={courseIndex}
-                      className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-medium"
+                      className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium"
                     >
                       {course}
                     </span>
@@ -177,20 +180,20 @@ const Experience = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-display font-bold text-neutral-900 mb-6">
+            <h3 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-6">
               Online Certifications
             </h3>
             <div className="grid gap-4">
               {achievements.map((achievement, index) => (
                 <div key={index} className="minimal-card rounded-xl p-5 flex items-start space-x-4">
-                  <div className="flex items-center justify-center w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex-shrink-0">
+                  <div className="flex items-center justify-center w-10 h-10 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-lg flex-shrink-0">
                     {achievement.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-neutral-900 mb-1">
+                    <h4 className="font-semibold text-neutral-900 dark:text-white mb-1">
                       {achievement.title}
                     </h4>
-                    <p className="text-neutral-600 text-sm">
+                    <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                       {achievement.description}
                     </p>
                   </div>
@@ -205,7 +208,7 @@ const Experience = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-display font-bold text-neutral-900 mb-6">
+            <h3 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-6">
               Certifications & Courses
             </h3>
             <div className="minimal-card rounded-xl p-6">
@@ -213,12 +216,12 @@ const Experience = () => {
                 {certifications.map((cert, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0"></div>
-                    <span className="text-neutral-700">{cert}</span>
+                    <span className="text-neutral-700 dark:text-neutral-300">{cert}</span>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 pt-6 border-t border-neutral-200">
-                <p className="text-neutral-600 text-sm">
+              <div className="mt-6 pt-6 border-t border-neutral-200 dark:border-neutral-700">
+                <p className="text-neutral-600 dark:text-neutral-400 text-sm">
                   Actively pursuing additional certifications in cloud computing and advanced machine learning.
                 </p>
               </div>
@@ -234,23 +237,23 @@ const Experience = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-display font-bold text-neutral-900 mb-6 text-center">
+          <h3 className="text-2xl font-display font-bold text-neutral-900 dark:text-white mb-6 text-center">
             Continuous Learning Mindset
           </h3>
           {personalProjects.map((project, index) => (
             <div key={index} className="text-center">
-              <h4 className="text-lg font-semibold text-neutral-900 mb-2">
+              <h4 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">
                 {project.title}
               </h4>
-              <p className="text-neutral-500 text-sm mb-4">
+              <p className="text-neutral-500 dark:text-neutral-400 text-sm mb-4">
                 {project.period}
               </p>
-              <p className="text-neutral-600 mb-4">
+              <p className="text-neutral-600 dark:text-neutral-400 mb-4">
                 {project.description}
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 {project.achievements.map((achievement, achIndex) => (
-                  <div key={achIndex} className="flex items-center justify-center space-x-2 text-neutral-700 text-sm">
+                  <div key={achIndex} className="flex items-center justify-center space-x-2 text-neutral-700 dark:text-neutral-300 text-sm">
                     <span className="text-primary-500">✓</span>
                     <span>{achievement}</span>
                   </div>
