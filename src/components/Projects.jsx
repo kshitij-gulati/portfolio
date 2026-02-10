@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github, BarChart3, Code, Database, Brain, Sparkles } from 'lucide-react'
+import { Github, BarChart3, Code, Database, Brain, Sparkles } from 'lucide-react'
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -13,7 +13,6 @@ const Projects = () => {
       category: "data-analysis",
       technologies: ["Python", "Pandas", "Matplotlib", "Jupyter"],
       github: "https://github.com/kshitij-gulati/student-performance",
-      demo: "https://your-demo-link.com",
       icon: <BarChart3 className="w-8 h-8" />,
       gradient: "from-blue-100 via-indigo-50 to-purple-100",
       iconColor: "text-blue-500"
@@ -25,7 +24,6 @@ const Projects = () => {
       category: "software-engineering",
       technologies: ["React", "JavaScript", "Chart.js", "LocalStorage"],
       github: "https://github.com/kshitij-gulati/finance-tracker",
-      demo: "https://your-demo-link.com",
       icon: <Code className="w-8 h-8" />,
       gradient: "from-green-100 via-emerald-50 to-teal-100",
       iconColor: "text-green-500"
@@ -37,7 +35,6 @@ const Projects = () => {
       category: "machine-learning",
       technologies: ["Python", "Scikit-learn", "Pandas", "NumPy"],
       github: "https://github.com/kshitij-gulati/movie-recommender",
-      demo: "https://your-demo-link.com",
       icon: <Brain className="w-8 h-8" />,
       gradient: "from-purple-100 via-pink-50 to-rose-100",
       iconColor: "text-purple-500"
@@ -49,7 +46,6 @@ const Projects = () => {
       category: "data-analysis",
       technologies: ["Python", "Streamlit", "Plotly", "APIs"],
       github: "https://github.com/kshitij-gulati/covid-dashboard",
-      demo: "https://your-demo-link.com",
       icon: <BarChart3 className="w-8 h-8" />,
       gradient: "from-orange-100 via-amber-50 to-yellow-100",
       iconColor: "text-orange-500"
@@ -61,7 +57,6 @@ const Projects = () => {
       category: "software-engineering",
       technologies: ["JavaScript", "HTML/CSS", "Weather API", "Bootstrap"],
       github: "https://github.com/kshitij-gulati/weather-app",
-      demo: "https://your-demo-link.com",
       icon: <Code className="w-8 h-8" />,
       gradient: "from-sky-100 via-cyan-50 to-blue-100",
       iconColor: "text-sky-500"
@@ -73,7 +68,6 @@ const Projects = () => {
       category: "data-engineering",
       technologies: ["Python", "SQLite", "Pandas", "Automation"],
       github: "https://github.com/kshitij-gulati/sales-etl",
-      demo: "https://your-demo-link.com",
       icon: <Database className="w-8 h-8" />,
       gradient: "from-violet-100 via-indigo-50 to-blue-100",
       iconColor: "text-violet-500"
@@ -239,17 +233,7 @@ const Projects = () => {
                       whileHover={{ x: 5 }}
                     >
                       <Github size={16} className="group-hover/link:scale-110 transition-transform duration-200" />
-                      <span className="text-sm font-medium">Code</span>
-                    </motion.a>
-                    <motion.a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-neutral-600 hover:text-accent-600 transition-colors duration-300 group/link"
-                      whileHover={{ x: 5 }}
-                    >
-                      <ExternalLink size={16} className="group-hover/link:scale-110 transition-transform duration-200" />
-                      <span className="text-sm font-medium">Demo</span>
+                      <span className="text-sm font-medium">View Code</span>
                     </motion.a>
                   </div>
                 </div>
