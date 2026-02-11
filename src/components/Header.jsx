@@ -112,7 +112,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
               <motion.div
                 animate={{ rotate: isMenuOpen ? 180 : 0 }}
                 transition={{ duration: 0.3 }}
-              >dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-4
+              >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </motion.div>
             </motion.button>
