@@ -34,7 +34,7 @@ const Projects = () => {
       description: "Created a basic recommendation system using collaborative filtering to suggest movies based on user preferences.",
       category: "machine-learning",
       technologies: ["Python", "Scikit-learn", "Pandas", "NumPy"],
-      github: "https://github.com/kshitij-gulati/movie-recommender",
+      github: "https://github.com/kshitij-gulati/Movie-Recommendation-System",
       icon: <Brain className="w-8 h-8" />,
       gradient: "from-purple-100 via-pink-50 to-rose-100",
       iconColor: "text-purple-500"
