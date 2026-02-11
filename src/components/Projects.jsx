@@ -87,8 +87,11 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter)
 
   return (
-    <section id="projects" className="section-padding bg-gradient-to-b from-white to-neutral-50/50">
-      <div className="max-w-7xl mx-auto">
+    <section id="projects" className="section-padding bg-gradient-to-b from-white via-[#fafbff] to-[#f5f8ff] dark:from-[#1a1a1a] dark:via-[#0f0f0f] dark:to-[#0a0a0a] relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-1/3 -right-64 w-96 h-96 bg-gradient-to-br from-secondary-400/15 to-secondary-200/5 rounded-full blur-3xl dark:from-secondary-600/10 dark:to-secondary-400/5"></div>
+      <div className="absolute -bottom-32 left-1/3 w-80 h-80 bg-gradient-to-br from-primary-400/10 to-primary-200/5 rounded-full blur-3xl dark:from-primary-600/5 dark:to-primary-400/5"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -105,7 +108,7 @@ const Projects = () => {
             Selected work
           </motion.span>
           <motion.h2 
-            className="text-4xl md:text-5xl font-display font-bold text-neutral-900 mb-6"
+            className="text-4xl md:text-5xl font-display font-bold text-neutral-900 dark:text-white mb-6"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
@@ -114,7 +117,7 @@ const Projects = () => {
             Featured Projects
           </motion.h2>
           <motion.p 
-            className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto leading-relaxed"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -139,7 +142,7 @@ const Projects = () => {
               className={`flex items-center space-x-2 px-6 py-3 rounded-2xl font-medium transition-all duration-300 ${
                 activeFilter === filter.id
                   ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg scale-105'
-                  : 'glass-card text-neutral-700 hover:shadow-lg hover:scale-105'
+                  : 'glass-card text-neutral-700 dark:text-neutral-300 hover:shadow-lg hover:scale-105'
               }`}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -202,12 +205,12 @@ const Projects = () => {
                 
                 <div className="p-8">
                   <motion.h3 
-                    className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors duration-300"
+                    className="text-xl font-bold text-neutral-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300"
                     whileHover={{ x: 5 }}
                   >
                     {project.title}
                   </motion.h3>
-                  <p className="text-neutral-600 mb-6 leading-relaxed">
+                  <p className="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
                     {project.description}
                   </p>
                   
@@ -215,7 +218,7 @@ const Projects = () => {
                     {project.technologies.map((tech, techIndex) => (
                       <motion.span
                         key={techIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-neutral-100 to-neutral-50 text-neutral-700 rounded-full text-xs font-medium border border-neutral-200"
+                        className="px-3 py-1 bg-gradient-to-r from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-700 text-neutral-700 dark:text-neutral-300 rounded-full text-xs font-medium border border-neutral-200 dark:border-neutral-700"
                         whileHover={{ scale: 1.05, y: -2 }}
                         transition={{ type: "spring", stiffness: 400 }}
                       >
@@ -229,7 +232,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-neutral-600 hover:text-primary-600 transition-colors duration-300 group/link"
+                      className="flex items-center space-x-2 text-neutral-600 dark:text-neutral-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 group/link"
                       whileHover={{ x: 5 }}
                     >
                       <Github size={16} className="group-hover/link:scale-110 transition-transform duration-200" />
@@ -253,7 +256,7 @@ const Projects = () => {
             href="https://github.com/kshitij-gulati"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-3 px-8 py-4 glass-card text-neutral-700 rounded-2xl font-medium hover:shadow-xl transition-all duration-300 group"
+            className="inline-flex items-center space-x-3 px-8 py-4 glass-card text-neutral-700 dark:text-neutral-300 rounded-2xl font-medium hover:shadow-xl transition-all duration-300 group"
             whileHover={{ y: -5, scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

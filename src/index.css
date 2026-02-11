@@ -18,6 +18,18 @@
   * {
     @apply border-neutral-200;
   }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html.dark body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  }
+
+  html.dark * {
+    @apply border-neutral-800;
+  }
 }
 
 @layer components {
@@ -38,11 +50,11 @@
   }
   
   .glass-card {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl dark:bg-neutral-900/70 dark:border-neutral-700/50;
   }
   
   .minimal-card {
-    @apply bg-white/80 backdrop-blur-sm border border-neutral-200/50 shadow-lg hover:shadow-xl transition-all duration-500;
+    @apply bg-white/80 backdrop-blur-sm border border-neutral-200/50 shadow-lg hover:shadow-xl transition-all duration-500 dark:bg-neutral-800/80 dark:border-neutral-700/50;
   }
   
   .card-hover {
@@ -104,15 +116,15 @@
   }
 
   .minimal-input {
-    @apply w-full px-0 py-4 bg-transparent border-0 border-b-2 border-neutral-200 focus:border-primary-500 focus:ring-0 transition-colors duration-300 placeholder-neutral-400;
+    @apply w-full px-0 py-4 bg-transparent border-0 border-b-2 border-neutral-200 focus:border-primary-500 focus:ring-0 transition-colors duration-300 placeholder-neutral-400 dark:border-neutral-700 dark:text-neutral-100;
   }
 
   .minimal-textarea {
-    @apply w-full px-0 py-4 bg-transparent border-0 border-b-2 border-neutral-200 focus:border-primary-500 focus:ring-0 transition-colors duration-300 placeholder-neutral-400 resize-none;
+    @apply w-full px-0 py-4 bg-transparent border-0 border-b-2 border-neutral-200 focus:border-primary-500 focus:ring-0 transition-colors duration-300 placeholder-neutral-400 resize-none dark:border-neutral-700 dark:text-neutral-100;
   }
 
   .skill-bar {
-    @apply relative overflow-hidden bg-neutral-100 rounded-full h-2;
+    @apply relative overflow-hidden bg-neutral-100 rounded-full h-2 dark:bg-neutral-800;
   }
 
   .skill-progress {
@@ -146,6 +158,23 @@
   .dot-pattern {
     background-image: radial-gradient(circle, #e5e5e5 1px, transparent 1px);
     background-size: 20px 20px;
+  }
+
+  html.dark .dot-pattern {
+    background-image: radial-gradient(circle, #404040 1px, transparent 1px);
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  html.dark .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
   }
 }
 
